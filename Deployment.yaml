@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jaagdesh-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jaagdesh
+  template:
+    metadata:
+      labels:
+        app: jaagdesh
+    spec:
+      containers:
+        - name: jaagdesh-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+
